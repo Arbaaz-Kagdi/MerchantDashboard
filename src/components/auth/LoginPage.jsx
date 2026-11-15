@@ -236,7 +236,7 @@ export const LoginPage = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Enter Email"
-                        className="w-full pl-10 pr-3.5 py-2.5 text-xs border border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all font-mono placeholder:font-sans"
+                        className="w-full pl-10 pr-3.5 py-2.5 text-xs border border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-shadow font-mono placeholder:font-sans"
                       />
                     </div>
                   </div>
@@ -257,7 +257,7 @@ export const LoginPage = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="Enter Password"
-                        className="w-full pl-10 pr-10 py-2.5 text-xs border border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all font-mono"
+                        className="w-full pl-10 pr-10 py-2.5 text-xs border border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-shadow font-mono"
                       />
                       <button
                         type="button"
@@ -321,7 +321,7 @@ export const LoginPage = () => {
                       value={signupName}
                       onChange={(e) => setSignupName(e.target.value)}
                       placeholder="e.g. Rohit Yadav"
-                      className="w-full pl-10 pr-3.5 py-2.5 text-xs border border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
+                      className="w-full pl-10 pr-3.5 py-2.5 text-xs border border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-shadow"
                     />
                   </div>
                 </div>
@@ -342,7 +342,7 @@ export const LoginPage = () => {
                       value={signupEmail}
                       onChange={(e) => setSignupEmail(e.target.value)}
                       placeholder="e.g. rohityadav@yahoo.com"
-                      className="w-full pl-10 pr-3.5 py-2.5 text-xs border border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all font-mono placeholder:font-sans"
+                      className="w-full pl-10 pr-3.5 py-2.5 text-xs border border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-shadow font-mono placeholder:font-sans"
                     />
                   </div>
                 </div>
@@ -363,7 +363,7 @@ export const LoginPage = () => {
                       value={signupPassword}
                       onChange={(e) => setSignupPassword(e.target.value)}
                       placeholder="Create password (min 4 characters)"
-                      className="w-full pl-10 pr-10 py-2.5 text-xs border border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all font-mono"
+                      className="w-full pl-10 pr-10 py-2.5 text-xs border border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-shadow font-mono"
                     />
                     <button
                       type="button"
@@ -434,7 +434,7 @@ export const LoginPage = () => {
                       value={signupStore}
                       onChange={(e) => setSignupStore(e.target.value)}
                       placeholder="e.g. Experia 360"
-                      className="w-full pl-10 pr-3.5 py-2.5 text-xs border border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
+                      className="w-full pl-10 pr-3.5 py-2.5 text-xs border border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-shadow"
                     />
                   </div>
                 </div>
