@@ -125,10 +125,9 @@ Race conditions - Fire many parallel refund requests for one transaction.
 **Controls a real backend must enforce:**
 1. **Signed sessions:** verify a signed JWT or `HttpOnly`, `SameSite=Strict` cookie on every request.
 2. **Server-side authorization:** check role and permission on every endpoint (e.g. `requireRole('admin')`).
-3. **Tenant scoping in queries:** `SELECT * FROM transactions WHERE id = $1 AND merchant_id = $auth_user.merchant_id`.
-4. **Input validation:** validate refund amount (positive, not above the refundable balance) and status server-side.
-5. **Idempotency keys:** require an `Idempotency-Key` header so a refund executes at most once.
-6. **Audit logging:** append-only logs of sensitive actions with user, IP, timestamp and before/after state.
+3. **Input validation:** validate refund amount (positive, not above the refundable balance) and status server-side.
+4. **Idempotency keys:** require an `Idempotency-Key` header so a refund executes at most once.
+5. **Audit logging:** append-only logs of sensitive actions with user, IP, timestamp and before/after state.
 
 ## Assumptions & Limitations
 
