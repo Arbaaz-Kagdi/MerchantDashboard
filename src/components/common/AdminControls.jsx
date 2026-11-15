@@ -39,7 +39,7 @@ export const AdminControls = ({
               </span>
             </div>
             <p className="text-xs text-purple-800/80 mt-0.5">
-              Simulate gateway failures, review cross-merchant audit trails, and test retry resilience.
+              Simulate gateway failures, reset database.
             </p>
           </div>
         </div>
@@ -56,7 +56,7 @@ export const AdminControls = ({
             }`}
           >
             <Zap className="w-3.5 h-3.5" />
-            <span>{simulateError ? 'Deactivate Chaos' : 'Simulate API Failure'}</span>
+            <span>{simulateError ? 'Deactivate Error Simulation' : 'Simulate API Failure'}</span>
           </button>
 
           {/* Reset Synthetic Database */}

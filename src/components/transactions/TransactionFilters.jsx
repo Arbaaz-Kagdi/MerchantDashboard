@@ -3,7 +3,6 @@ import {
   Search,
   RotateCcw,
   Download,
-  AlertTriangle,
   Filter,
 } from 'lucide-react';
 
@@ -18,8 +17,6 @@ export const TransactionFilters = ({
   setStartDate,
   endDate,
   setEndDate,
-  simulateError,
-  setSimulateError,
   onReset,
   onExportCsv,
   isExporting,
@@ -57,7 +54,7 @@ export const TransactionFilters = ({
 
   return (
     <div className="bg-white rounded-2xl border border-slate-200 shadow-xs p-4 sm:p-5 mb-6">
-      {/* Primary Row: Search, Status, CSV Export & Simulate Error */}
+      {/* Primary Row: Search, Status, CSV Export & Filters */}
       <div className="flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
         {/* Search Input with accessible label */}
         <div className="relative flex-1">
@@ -129,21 +126,6 @@ export const TransactionFilters = ({
           >
             <Download className="w-3.5 h-3.5 text-slate-500" />
             <span>{isExporting ? 'Exporting...' : 'Export CSV'}</span>
-          </button>
-
-          {/* Deliberate Error Simulation Toggle */}
-          <button
-            onClick={() => setSimulateError(!simulateError)}
-            className={`inline-flex items-center gap-1.5 px-3 py-2 text-xs font-bold rounded-xl border transition-all ${
-              simulateError
-                ? 'bg-rose-600 text-white border-rose-600 shadow-xs'
-                : 'bg-rose-50 text-rose-700 border-rose-200 hover:bg-rose-100'
-            }`}
-            title="Simulate core banking gateway timeout / HTTP 500 error"
-            aria-pressed={simulateError}
-          >
-            <AlertTriangle className="w-3.5 h-3.5" />
-            <span>{simulateError ? 'Simulating Error ⚡' : 'Simulate API Failure'}</span>
           </button>
 
           {/* Reset Filters */}

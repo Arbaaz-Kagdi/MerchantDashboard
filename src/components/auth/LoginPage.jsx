@@ -179,7 +179,7 @@ export const LoginPage = () => {
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
-                      Authorized Accounts
+                      Test Accounts
                     </span>
                     <span className="text-[11px] text-slate-700 font-semibold flex items-center gap-1">
                       Click to Auto-fill

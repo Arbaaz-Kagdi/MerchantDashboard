@@ -162,7 +162,7 @@ For example, `POST /api/transactions/TXN_IND_1001/refund` with `{"amount":500,"r
 
 ## Simulated API Failure
 
-1. Click **Simulate API Failure** in the filter bar (or toggle it in the Admin Operations Console).
+1. Simulate **Simulate API Failure** by signing as Admin and selecting Simulate API Failure from Admin Operations Console.
 2. The API returns an HTTP 500 (`Simulated Core Banking Failure (HTTP 500): NPCI Switch Connection Timeout`).
 3. The dashboard shows the error alert with a **Retry Request** button.
 4. Turn the simulation off and click **Retry Request** to recover.

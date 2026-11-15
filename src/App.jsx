@@ -125,8 +125,6 @@ const AuthenticatedDashboard = () => {
           setStartDate={setStartDate}
           endDate={endDate}
           setEndDate={setEndDate}
-          simulateError={simulateError}
-          setSimulateError={setSimulateError}
           onReset={handleResetFilters}
           onExportCsv={handleExportCsv}
           isExporting={isExporting}
