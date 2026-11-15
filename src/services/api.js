@@ -138,15 +138,7 @@ export async function fetchTransactions(params = {}, signal) {
     throw new DOMException('Aborted', 'AbortError');
   }
 
-  // If deliberate simulation requested
-  if (params.simulateError || isClientChaosMode) {
-    await new Promise((_, reject) => {
-      const timer = setTimeout(() => {
-        reject(new Error('Simulated Core Banking Failure (HTTP 500): NPCI Switch Connection Timeout.'));
-      }, 300);
-      signal?.addEventListener('abort', () => clearTimeout(timer));
-    });
-  }
+  const shouldSimulateError = params.simulateError || isClientChaosMode;
 
   if (isBackendUp) {
     const query = new URLSearchParams();
@@ -159,7 +151,7 @@ export async function fetchTransactions(params = {}, signal) {
     if (params.paymentMethod && params.paymentMethod !== 'All') query.set('paymentMethod', params.paymentMethod);
     if (params.startDate) query.set('startDate', params.startDate);
     if (params.endDate) query.set('endDate', params.endDate);
-    if (params.simulateError) query.set('simulateError', 'true');
+    if (shouldSimulateError) query.set('simulateError', 'true');
 
     try {
       const res = await fetch(`/api/transactions?${query.toString()}`, { signal });
@@ -170,6 +162,9 @@ export async function fetchTransactions(params = {}, signal) {
       return await res.json();
     } catch (err) {
       if (err.name === 'AbortError') {
+        throw err;
+      }
+      if (shouldSimulateError) {
         throw err;
       }
       console.warn('[ArbaazPay] Backend fetch failed, falling back to simulated engine:', err.message);
@@ -183,6 +178,11 @@ export async function fetchTransactions(params = {}, signal) {
     }
 
     const timeoutId = setTimeout(() => {
+      if (shouldSimulateError) {
+        reject(new Error('Simulated Core Banking Failure (HTTP 500): NPCI Switch Connection Timeout.'));
+        return;
+      }
+
       const page = Math.max(1, params.page || 1);
       const limit = Math.max(1, Math.min(100, params.limit || 10));
 
