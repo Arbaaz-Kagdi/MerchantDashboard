@@ -82,21 +82,18 @@ export const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 flex flex-col justify-between relative overflow-hidden font-sans selection:bg-brand-500 selection:text-white">
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-brand-600/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none" />
+    <div className="min-h-screen bg-gradient-to-br from-[#03070d] via-[#0b1018] to-[#2b0c14] flex flex-col justify-between relative overflow-hidden font-sans selection:bg-red-500 selection:text-white">
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-red-700/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-red-900/20 rounded-full blur-3xl pointer-events-none" />
 
       <header className="w-full max-w-7xl mx-auto px-6 py-6 flex items-center justify-between z-10">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-lg shadow-brand-500/30">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-red-600 to-red-700 flex items-center justify-center text-white shadow-lg shadow-red-500/30">
             <CreditCard className="w-5 h-5" />
           </div>
           <div>
             <div className="flex items-center gap-2">
               <span className="font-extrabold text-white tracking-tight text-xl">ArbaazPay</span>
-              <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-brand-500/20 text-brand-300 border border-brand-400/30">
-                INR Gateway
-              </span>
             </div>
             <p className="text-xs text-slate-400">Merchant Operations & Settlement Platform</p>
           </div>
@@ -107,16 +104,16 @@ export const LoginPage = () => {
       <main className="flex-1 flex items-center justify-center p-4 z-10">
         <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full overflow-hidden border border-slate-100 animate-fade-in">
           {/* Card Brand Header */}
-          <div className="p-6 sm:p-8 bg-gradient-to-tr from-slate-950 via-slate-900 to-brand-950 text-white relative">
-            <div className="w-12 h-12 rounded-2xl bg-brand-500/20 border border-brand-400/30 flex items-center justify-center mb-4">
+          <div className="p-6 sm:p-8 bg-gradient-to-tr from-slate-950 via-slate-900 to-red-950 text-white relative">
+            <div className="w-12 h-12 rounded-2xl bg-red-500/20 border border-red-400/30 flex items-center justify-center mb-4">
               {mode === 'signin' ? (
-                <KeyRound className="w-6 h-6 text-brand-300" />
+                <KeyRound className="w-6 h-6 text-red-300" />
               ) : (
-                <UserPlus className="w-6 h-6 text-brand-300" />
+                <UserPlus className="w-6 h-6 text-red-300" />
               )}
             </div>
             <h1 className="text-2xl font-black tracking-tight text-white">
-              {mode === 'signin' ? 'Sign In to ArbaazPay' : 'Create ArbaazPay Account'}
+              {mode === 'signin' ? 'Sign In to ArbaazPay' : 'Create Account'}
             </h1>
             <p className="text-xs text-slate-300 mt-1.5 leading-relaxed">
               {mode === 'signin'
@@ -184,7 +181,7 @@ export const LoginPage = () => {
                     <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
                       Authorized Accounts
                     </span>
-                    <span className="text-[11px] text-brand-600 font-semibold flex items-center gap-1">
+                    <span className="text-[11px] text-slate-700 font-semibold flex items-center gap-1">
                       Click to Auto-fill
                     </span>
                   </div>
@@ -208,16 +205,16 @@ export const LoginPage = () => {
                     <button
                       type="button"
                       onClick={() => handleFillCredentials('arbaaz@admin.com', '00006789')}
-                      className="p-2.5 rounded-xl border border-purple-200 bg-purple-50/60 hover:bg-purple-100/70 text-left transition-all group"
+                      className="p-2.5 rounded-xl border border-red-200 bg-red-50/60 hover:bg-red-100/70 text-left transition-all group"
                     >
-                      <div className="flex items-center gap-1.5 text-purple-800 font-bold text-xs">
+                      <div className="flex items-center gap-1.5 text-red-800 font-bold text-xs">
                         <ShieldCheck className="w-3.5 h-3.5" />
                         <span>Admin</span>
                       </div>
                       <p className="text-[10px] text-slate-500 font-mono mt-0.5 truncate">
                         arbaaz@admin.com
                       </p>
-                      <p className="text-[10px] text-purple-700 font-mono">pwd: 00006789</p>
+                      <p className="text-[10px] text-red-700 font-mono">pwd: 00006789</p>
                     </button>
                   </div>
                 </div>
@@ -239,7 +236,7 @@ export const LoginPage = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Enter Email"
-                        className="w-full pl-10 pr-3.5 py-2.5 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all font-mono placeholder:font-sans"
+                        className="w-full pl-10 pr-3.5 py-2.5 text-xs border border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all font-mono placeholder:font-sans"
                       />
                     </div>
                   </div>
@@ -260,7 +257,7 @@ export const LoginPage = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="Enter Password"
-                        className="w-full pl-10 pr-10 py-2.5 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all font-mono"
+                        className="w-full pl-10 pr-10 py-2.5 text-xs border border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all font-mono"
                       />
                       <button
                         type="button"
@@ -276,7 +273,7 @@ export const LoginPage = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3 bg-brand-600 hover:bg-brand-700 active:bg-brand-800 disabled:opacity-60 text-white font-bold rounded-xl transition-all shadow-md shadow-brand-500/20 flex items-center justify-center gap-2 text-sm mt-3"
+                    className="w-full py-3 bg-slate-950 hover:bg-slate-800 active:bg-slate-900 disabled:opacity-60 text-white font-bold rounded-xl transition-all shadow-md shadow-slate-900/20 flex items-center justify-center gap-2 text-sm mt-3"
                   >
                     {isSubmitting ? (
                       <span>Authenticating...</span>
@@ -298,7 +295,7 @@ export const LoginPage = () => {
                         setMode('signup');
                         setErrorMessage('');
                       }}
-                      className="font-bold text-brand-600 hover:text-brand-700 hover:underline"
+                      className="font-bold text-slate-900 hover:text-slate-700 hover:underline"
                     >
                       Sign Up here
                     </button>
@@ -324,7 +321,7 @@ export const LoginPage = () => {
                       value={signupName}
                       onChange={(e) => setSignupName(e.target.value)}
                       placeholder="e.g. Rohit Yadav"
-                      className="w-full pl-10 pr-3.5 py-2.5 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all"
+                      className="w-full pl-10 pr-3.5 py-2.5 text-xs border border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
                     />
                   </div>
                 </div>
@@ -345,7 +342,7 @@ export const LoginPage = () => {
                       value={signupEmail}
                       onChange={(e) => setSignupEmail(e.target.value)}
                       placeholder="e.g. rohityadav@yahoo.com"
-                      className="w-full pl-10 pr-3.5 py-2.5 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all font-mono placeholder:font-sans"
+                      className="w-full pl-10 pr-3.5 py-2.5 text-xs border border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all font-mono placeholder:font-sans"
                     />
                   </div>
                 </div>
@@ -366,7 +363,7 @@ export const LoginPage = () => {
                       value={signupPassword}
                       onChange={(e) => setSignupPassword(e.target.value)}
                       placeholder="Create password (min 4 characters)"
-                      className="w-full pl-10 pr-10 py-2.5 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all font-mono"
+                      className="w-full pl-10 pr-10 py-2.5 text-xs border border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all font-mono"
                     />
                     <button
                       type="button"
@@ -407,12 +404,12 @@ export const LoginPage = () => {
                       onClick={() => setSignupRole('admin')}
                       className={`p-2 rounded-xl border text-left transition-all ${
                         signupRole === 'admin'
-                          ? 'border-purple-500 bg-purple-50/80 text-purple-900 font-bold ring-1 ring-purple-500'
+                          ? 'border-red-500 bg-red-50/80 text-red-900 font-bold ring-1 ring-red-500'
                           : 'border-slate-200 text-slate-600 hover:bg-slate-50'
                       }`}
                     >
                       <div className="flex items-center gap-1.5 text-xs">
-                        <ShieldCheck className="w-3.5 h-3.5 text-purple-600" />
+                        <ShieldCheck className="w-3.5 h-3.5 text-red-600" />
                         <span>Admin</span>
                       </div>
                       <p className="text-[10px] text-slate-400 font-normal mt-0.5">
@@ -437,7 +434,7 @@ export const LoginPage = () => {
                       value={signupStore}
                       onChange={(e) => setSignupStore(e.target.value)}
                       placeholder="e.g. Experia 360"
-                      className="w-full pl-10 pr-3.5 py-2.5 text-xs border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all"
+                      className="w-full pl-10 pr-3.5 py-2.5 text-xs border border-slate-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 transition-all"
                     />
                   </div>
                 </div>
@@ -445,7 +442,7 @@ export const LoginPage = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3 bg-brand-600 hover:bg-brand-700 active:bg-brand-800 disabled:opacity-60 text-white font-bold rounded-xl transition-all shadow-md shadow-brand-500/20 flex items-center justify-center gap-2 text-sm mt-4"
+                  className="w-full py-3 bg-slate-950 hover:bg-slate-800 active:bg-slate-900 disabled:opacity-60 text-white font-bold rounded-xl transition-all shadow-md shadow-slate-900/20 flex items-center justify-center gap-2 text-sm mt-4"
                 >
                   {isSubmitting ? (
                     <span>Registering Account...</span>
@@ -466,7 +463,7 @@ export const LoginPage = () => {
                         setMode('signin');
                         setErrorMessage('');
                       }}
-                      className="font-bold text-brand-600 hover:text-brand-700 hover:underline"
+                      className="font-bold text-slate-900 hover:text-slate-700 hover:underline"
                     >
                       Sign In instead
                     </button>

@@ -207,7 +207,7 @@ export const TransactionDetailModal = ({
                 onClick={() => {
                   onRequestRefund(transaction);
                 }}
-                className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-white bg-purple-600 hover:bg-purple-700 rounded-lg shadow-xs transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-white bg-slate-950 hover:bg-slate-800 rounded-lg shadow-xs transition-colors"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 <span>Request Refund</span>

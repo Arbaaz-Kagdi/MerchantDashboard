@@ -103,7 +103,7 @@ export const Pagination = ({
                 onClick={() => onPageChange(pageNum)}
                 className={`min-w-8 h-8 px-2 flex items-center justify-center rounded-lg text-xs font-bold transition-all ${
                   isActive
-                    ? 'bg-brand-600 text-white shadow-xs'
+                    ? 'bg-slate-950 text-white shadow-xs'
                     : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50'
                 }`}
                 aria-current={isActive ? 'page' : undefined}

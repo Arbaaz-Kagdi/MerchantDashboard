@@ -107,7 +107,7 @@ export const LoginModal = ({ isOpen, onClose }) => {
             <CreditCard className="w-6 h-6 text-brand-300" />
           </div>
           <h2 id="login-modal-title" className="text-xl font-bold">
-            {mode === 'signin' ? 'Sign In to ArbaazPay' : 'Create ArbaazPay Account'}
+            {mode === 'signin' ? 'Sign In to ArbaazPay' : 'Create Account'}
           </h2>
           <p className="text-xs text-brand-200 mt-1">
             Indian Merchant Gateway & Settlement Console
@@ -252,7 +252,7 @@ export const LoginModal = ({ isOpen, onClose }) => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-2.5 bg-brand-600 hover:bg-brand-700 disabled:opacity-60 text-white font-bold rounded-xl transition-colors shadow-xs flex items-center justify-center gap-1.5 mt-2"
+                  className="mt-2 flex w-full items-center justify-center gap-1.5 rounded-xl bg-slate-950 py-2.5 font-bold text-white shadow-xs transition-colors hover:bg-slate-800 disabled:opacity-60"
                 >
                   <span>{isSubmitting ? 'Authenticating...' : 'Continue to Dashboard'}</span>
                   <ArrowRight className="w-4 h-4" />

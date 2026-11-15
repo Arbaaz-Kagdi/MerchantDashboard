@@ -69,7 +69,7 @@ const AuthenticatedDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
+    <div className="min-h-screen bg-slate-100 flex flex-col font-sans">
       {/* Toast Notification Container */}
       {toastMessage && (
         <div
@@ -83,7 +83,7 @@ const AuthenticatedDashboard = () => {
                 ? 'bg-emerald-950 text-emerald-100 border-emerald-800'
                 : toastMessage.type === 'error'
                   ? 'bg-rose-950 text-rose-100 border-rose-800'
-                  : 'bg-slate-900 text-white border-slate-700'
+                  : 'bg-slate-300 text-white border-slate-700'
             }`}
           >
             {toastMessage.type === 'success' ? (

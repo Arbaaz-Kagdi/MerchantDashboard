@@ -12,16 +12,13 @@ export const Navbar = ({ onOpenLogin }) => {
         <div className="flex items-center justify-between h-16 gap-4">
           {/* Left: Brand & Store */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+            <div className="w-10 h-10 rounded-xl bg-red-600 flex items-center justify-center text-white shadow-md shadow-red-500/20">
               <CreditCard className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-extrabold text-slate-900 tracking-tight text-lg">
                   ArbaazPay
-                </span>
-                <span className="text-[10px] font-bold tracking-wider uppercase px-1.5 py-0.5 rounded bg-brand-50 text-brand-700 border border-brand-200">
-                  INR Merchant
                 </span>
               </div>
               <div className="flex items-center gap-1.5 text-xs text-slate-500">
