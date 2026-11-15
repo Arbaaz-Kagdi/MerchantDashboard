@@ -94,6 +94,72 @@ Open http://localhost:5173.
 
 ---
 
+## Sample Mock Data & API
+
+The project creates 85 synthetic transactions (10 sample records plus 75 generated records). The server dataset is defined in `server/mockData.js`. Transaction updates and refunds are stored in memory and are lost when the server or page is restarted.
+
+Example:
+
+```json
+{
+  "id": "TXN_IND_1001",
+  "orderRef": "ORD_BLR_98214",
+  "merchantRef": "MER_ZEPTO_01",
+  "amount": 1450,
+  "currency": "INR",
+  "paymentMethod": "UPI",
+  "paymentDetails": {
+    "provider": "Google Pay",
+    "vpa": "rohit.sharma@okaxis",
+    "bankRrn": "432109876541"
+  },
+  "status": "Success",
+  "createdAt": "2026-11-13T12:28:00.000Z",
+  "customer": {
+    "name": "Rohit Sharma",
+    "email": "rohit.sharma@example.com",
+    "phone": "+91 98765 43210"
+  },
+  "storeName": "Zepto Quick Mart - Indiranagar",
+  "fee": 26.1,
+  "gst": 4.7,
+  "settlementAmount": 1419.2,
+  "refund": null
+}
+```
+
+To add sample records, edit `initialTransactions` or the generator in both mock-data files. Keep required fields and types consistent (including status values `Success`, `Pending`, `Failed`, or `Refunded`) so filtering, sorting, and transaction details work in both API modes.
+
+### Try the API
+
+With `npm run dev` running, the API is available at `http://localhost:5000`.
+
+```bash
+# Check that the API is running
+curl http://localhost:5000/api/health
+
+# Fetch one transaction
+curl http://localhost:5000/api/transactions/TXN_IND_1001
+
+# Get dashboard totals
+curl http://localhost:5000/api/stats/overview
+```
+
+Endpoints:
+
+| Method | Endpoint | Purpose |
+| --- | --- | --- |
+| `POST` | `/api/auth/login` | Sign in with a demo account. |
+| `POST` | `/api/auth/register` | Add an in-memory demo user. |
+| `GET` | `/api/transactions/export/csv` | Download the filtered transaction set as CSV. |
+| `POST` | `/api/transactions/:id/refund` | Simulate a refund. |
+| `POST` | `/api/admin/reset` | Restore the initial synthetic transaction data. |
+| `POST` | `/api/admin/chaos` | Toggle simulated transaction API failures. |
+
+For example, `POST /api/transactions/TXN_IND_1001/refund` with `{"amount":500,"reason":"Customer request"}` updates the in memory transaction to `Refunded`.
+
+---
+
 ## Simulated API Failure
 
 1. Click **Simulate API Failure** in the filter bar (or toggle it in the Admin Operations Console).
