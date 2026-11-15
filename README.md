@@ -128,7 +128,7 @@ Example:
 }
 ```
 
-To add sample records, edit `initialTransactions` or the generator in both mock-data files. Keep required fields and types consistent (including status values `Success`, `Pending`, `Failed`, or `Refunded`) so filtering, sorting, and transaction details work in both API modes.
+To add sample records, edit `initialTransactions` in both mock-data files.
 
 ### Try the API
 
